@@ -42,38 +42,43 @@ window, a vector of features was obtained by calculating variables from the time
 
 ###The following files are available for the train and test data. Their descriptions are equivalent:
 - 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is 
-	  from 1 to 30. 
+from 1 to 30. 
 - 'train/Inertial Signals/total_acc_x_train.txt': The acceleration signal from the smartphone accelerometer X axis in standard 
-	  gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 
-	  'total_acc_z_train.txt' files for the Y and Z axis.
-- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the 
-    total acceleration. 
+gravity units 'g'. Every row shows a 128 element vector. The same description applies for the 'total_acc_x_train.txt' and 
+'total_acc_z_train.txt' files for the Y and Z axis.
+- 'train/Inertial Signals/body_acc_x_train.txt': The body acceleration signal obtained by subtracting the gravity from the 	
+total acceleration. 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window 
-    sample. The units are radians/second. 
+sample. The units are radians/second. 
 
 ###Two datasets have been derived from the data sets that are described above:
--  merge.dat ('merge_data.csv', can be read in using read.csv(FILE_NAME)): a set of all mean, standard deviation, and 
-    frequency mean calculations for X, Y and Z components and magnitude for time and frequency measurements. The data is 
-    merged in such a way that the test data is the "top" portion of the new data set and the training data is the "bottom"
-    portion of the new set. This distinction becomes unimportant once the table is ordered (ascending) and grouped by subject 
-    and activity, resulting in a 10299 x 81 table.
--  merge.means ('merge_means.csv', can be read in using read.csv(FILE_NAME)): a summary of the aformentioned data
-	  set such that each action record is averaged for each subject and activity, resultings in a 180 x 81 table of means
+-  merge.dat ('merge_data.csv', can be read in using read.csv(FILE_NAME)): a set of all mean, standard deviation, and frequency 
+mean calculations for X, Y and Z components and magnitude for time and frequency measurements. The data is merged in such a way
+that the test data is the "top" portion of the new data set and the training data is the "bottom"portion of the new set. This 
+distinction becomes unimportant once the table is ordered (ascending) and grouped by subject and activity, resulting in a 10299 
+x 81 table.
+-  merge.means ('merge_means.csv', can be read in using read.csv(FILE_NAME)): a summary of the aforementioned dataset such that 
+each action record is averaged for each subject and activity, resultings in a 180 x 81 table of means
 
 ###The following describes the column name logic:
--  [t/f].[signal].[function].[dimension]
+-  [factors].[signal].[function].[dimension]
+
+####Factors:
 -  t: time components
 -  f: frequency components
+
 ####Signals:
 -  BodyAcc: acceleration of the subject's body
 -  GravityAcc: acceleration of gravity on the subject's body
 -  BodyAccJerk: jerk the subject's body undergoes from acceleration
 -  BodyGyro: gyroscopic motion of the subject's body
 -  BodyGyroJerk: jerk the subject's body undergoes from gyroscopic motion
+
 ####Functions:
 -  mean: the mean value of data collected on participating subjects
 -  std: the standard deviation value of data collected on participating subjects
 -  meanFreq: the mean of frequency values associated to the data collected on participating subjects
+
 ####Dimensions:
 -  X: motion along the x-axis
 -  Y: motion along the y-axis
@@ -89,6 +94,6 @@ column displays the associated activity (text value).
 Data is "clusted" by action in the column header. For example, columns 3, 4, 5 and 6 are t.BodyAcc.mean.X, t.BodyAcc.mean.Y, 
 t.BodyAcc.mean.Z and t.BodyAcc.mean.Mag, respectively.
 
-####Notes: 
+###Notes: 
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
