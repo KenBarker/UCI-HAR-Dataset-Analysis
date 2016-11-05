@@ -54,24 +54,27 @@ window, a vector of features was obtained by calculating variables from the time
 ###Two datasets have been derived from the data sets that are described above:
 -  merge.dat ('merge_data.csv', can be read in using read.csv(FILE_NAME)): a set of all mean, standard deviation, and 
     frequency mean calculations for X, Y and Z components and magnitude for time and frequency measurements. The data is 
-	  merged in such a way that the test data is the "top" portion of the new data set and the training data is the "bottom"
-	  portion of the new set. This distinction becomes unimportant once the table is ordered (ascending) and grouped by subject 
-	  and activity, resulting in a 10299 x 81 table.
+    merged in such a way that the test data is the "top" portion of the new data set and the training data is the "bottom"
+    portion of the new set. This distinction becomes unimportant once the table is ordered (ascending) and grouped by subject 
+    and activity, resulting in a 10299 x 81 table.
 -  merge.means ('merge_means.csv', can be read in using read.csv(FILE_NAME)): a summary of the aformentioned data
 	  set such that each action record is averaged for each subject and activity, resultings in a 180 x 81 table of means
 
 ###The following describes the column name logic:
--  [t/f].[function].[mean/std/meanFreq].[X/Y/Z/Mag]
+-  [t/f].[signal].[function].[dimension]
 -  t: time components
 -  f: frequency components
+####Signals:
 -  BodyAcc: acceleration of the subject's body
 -  GravityAcc: acceleration of gravity on the subject's body
 -  BodyAccJerk: jerk the subject's body undergoes from acceleration
 -  BodyGyro: gyroscopic motion of the subject's body
 -  BodyGyroJerk: jerk the subject's body undergoes from gyroscopic motion
+####Functions:
 -  mean: the mean value of data collected on participating subjects
 -  std: the standard deviation value of data collected on participating subjects
 -  meanFreq: the mean of frequency values associated to the data collected on participating subjects
+####Dimensions:
 -  X: motion along the x-axis
 -  Y: motion along the y-axis
 -  Z: motion along the z-axis
