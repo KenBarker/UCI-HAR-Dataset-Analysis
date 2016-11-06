@@ -11,21 +11,29 @@ and t.BodyGyroJerk.XYZ). Also the magnitude of these three-dimensional signals w
 (t.BodyAcc.Mag, t.GravityAcc.Mag, t.BodyAccJerk.Mag, t.BodyGyro.Mag, t.BodyGyroJerk.Mag). 
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing f.BodyAcc.XYZ, f.BodyAccJerk.XYZ, 
-f.BodyGyro.XYZ, f.BodyAccJerk.Mag, f.BodyGyro.Mag, f.BodyGyroJerk.Mag. (Note the 'f' to indicate frequency domain signals). 
+f.BodyGyro.XYZ, f.BodyAccJerk.Mag, f.BodyGyro.Mag, f.BodyGyroJerk.Mag. (Note the 'f' to indicate frequency domain signals).
 
-##These signals were used to estimate variables of the feature vector for each pattern:  
-###.X/Y/Z is used to denote 3-axial signals in the X, Y and Z directions and Mag is used to denote the magnitude of the vector
-- t.BodyAcc.[function].[X/Y/Z/Mag]
-- t.GravityAcc.[function].[X/Y/Z/Mag]
-- t.BodyAccJerk.[function].[X/Y/Z/Mag]
-- t.BodyGyro.[function].[X/Y/Z/Mag]
-- t.BodyGyroJerk.[function].[X/Y/Z/Mag]
-- f.BodyAcc.[function].[X/Y/Z/Mag]
-- f.BodyAccJerk.[function].[X/Y/Z/Mag]
-- f.BodyGyro.[function].[X/Y/Z/Mag]
-- f.BodyGyroJerk.[function].[Mag]
+##The following describes the column name logic:
+-  [factors].[signal].[function].[dimension]
 
-##The functions used to manipulate the set of variables that were estimated from these signals are: 
-- mean(): Mean value
-- std(): Standard deviation
-- meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+###Factors:
+-  t: time components
+-  f: frequency components
+
+###Signals:
+-  BodyAcc: acceleration of the subject's body
+-  GravityAcc: acceleration of gravity on the subject's body
+-  BodyAccJerk: jerk the subject's body undergoes from acceleration
+-  BodyGyro: gyroscopic motion of the subject's body
+-  BodyGyroJerk: jerk the subject's body undergoes from gyroscopic motion
+
+###Functions:
+-  mean: the mean value of data collected on participating subjects
+-  std: the standard deviation value of data collected on participating subjects
+-  meanFreq: the mean of frequency values associated to the data collected on participating subjects
+
+###Dimensions:
+-  X: motion along the x-axis
+-  Y: motion along the y-axis
+-  Z: motion along the z-axis
+-  Mag: the magnitude of a given calculation (eg. vector and magnitude)
