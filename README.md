@@ -60,32 +60,6 @@ x 81 table.
 -  merge.means ('merge_means.csv', can be read in using read.csv(FILE_NAME)): a summary of the aforementioned dataset such that 
 each action record is averaged for each subject and activity, resultings in a 180 x 81 table of means
 
-###The following describes the column name logic:
--  [factors].[signal].[function].[dimension]
-
-####Factors:
--  t: time components
--  f: frequency components
-
-####Signals:
--  BodyAcc: acceleration of the subject's body
--  GravityAcc: acceleration of gravity on the subject's body
--  BodyAccJerk: jerk the subject's body undergoes from acceleration
--  BodyGyro: gyroscopic motion of the subject's body
--  BodyGyroJerk: jerk the subject's body undergoes from gyroscopic motion
-
-####Functions:
--  mean: the mean value of data collected on participating subjects
--  std: the standard deviation value of data collected on participating subjects
--  meanFreq: the mean of frequency values associated to the data collected on participating subjects
-
-####Dimensions:
--  X: motion along the x-axis
--  Y: motion along the y-axis
--  Z: motion along the z-axis
--  Mag: the magnitude of a given calculation (eg. vector and magnitude)
-*See features_codebook for more information*
-
 ##Additional Information:
 Two additional columns have been added to the beginning of the dataset for subject and activity. These columns are named 
 "Subject" and "Activity", respectively. The Subject column displays the subject identifiers (eg. 1, 2, 3) and the Activity 
