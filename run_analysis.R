@@ -79,3 +79,7 @@ run_analysis <- function(path = "./Assignments/UCI HAR Dataset/")
         write.table( merge.means, paste(path, "merge_means.txt", sep = ""), 
                      row.names = FALSE )
 }
+
+##Runs the function when the script is sourced (Note: change the path to the
+##      location where the raw datasets are stored)
+run_analysis(path = "./Assignments/UCI HAR Dataset/")
